@@ -4,9 +4,9 @@ const Header = () => {
   return (
     <div className="bg-white w-full p-4 py-2">
       <div className="w-maxContainer grid mx-auto grid-cols-3 items-center justify-center">
-        <p className="font-semibold flex items-center gap-2">
-          <FaTasks style={{ fontSize: "24px", cursor: "pointer" }} />
-          <span className="cursor-pointer">Tasks</span>
+        <p className="font-semibold inline-flex items-center gap-2 cursor-pointer">
+          <FaTasks style={{ fontSize: "24px" }} />
+          Tasks
         </p>
         <div className="flex items-center justify-self-center gap-5">
           <p className="cursor-pointer">Home</p>
