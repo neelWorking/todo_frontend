@@ -2,7 +2,7 @@ import { FaTasks } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <div className="bg-white w-full p-4 py-2">
+    <div className="bg-white w-full p-4 py-2 z-50">
       <div className="w-maxContainer grid mx-auto grid-cols-3 items-center justify-center">
         <p className="font-semibold flex items-center gap-2">
           <FaTasks style={{ fontSize: "24px", cursor: "pointer" }} />
