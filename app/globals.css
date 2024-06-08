@@ -22,3 +22,70 @@ body {
   scrollbar-width: none !important;
   /* Firefox */
 }
+
+/* Animation for big screens */
+.task-card {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .flex.flex-col.md\:flex-row {
+    flex-direction: column;
+  }
+
+  .task-card {
+    animation: slideIn 0.5s ease-in-out forwards;
+  }
+}
+
+/* Animation for small screens */
+.task-card.slideInSmall {
+  animation: slideInSmall 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInSmall {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .flex.flex-col.md\:flex-row {
+    flex-direction: column;
+  }
+
+  .task-card {
+    animation: slideInSmall 0.5s ease-in-out forwards;
+  }
+}
+
+@keyframes topToBottom {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-top-to-bottom {
+  animation: topToBottom 1s ease-in-out forwards;
+}
