@@ -81,10 +81,10 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
                 id="user-name"
                 placeholder="Enter user name"
                 {...register("username", {
-                  required: "Username is required",
+                  required: " * Username is required",
                   pattern: {
                     value: /^[a-zA-Z0-9_.-]*$/,
-                    message: "Invalid username",
+                    message: " * Invalid username",
                   },
                 })}
               />
@@ -109,10 +109,10 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
                 id="user-password"
                 placeholder="Enter password"
                 {...register("password", {
-                  required: "Password is required",
+                  required: " * Password is required",
                   minLength: {
                     value: 6,
-                    message: "Password must be at least 6 characters long",
+                    message: " * Password must be at least 6 characters long",
                   },
                 })}
               />
@@ -150,7 +150,7 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
           </button>
           <div className="pt-4 text-center">
             <p className="text-sm text-gray-700 font-medium">
-              New to Todoby?{" "}
+              New to Tasks by?{" "}
               <span
                 className="text-black font-medium underline"
                 onClick={() => setFormLogin(false)}
