@@ -1,10 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { FaTasks } from "react-icons/fa";
 
-const Header = () => {
+const Header = ({ setFormLogin }) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <div className="bg-white w-full p-4 py-2 z-50">
@@ -26,10 +27,15 @@ const Header = () => {
         </div>
         <div className="justify-self-end">
           <button
-            className="bg-black cursor-pointer px-4 py-2 rounded-md text-white"
-            onClick={() => router.push("/login")}
+            className="bg-black cursor-pointer w-24 px-4 py-2 rounded-md text-white"
+            onClick={() => {
+              if (pathname === "/login") {
+                setFormLogin(false);
+              }
+              router.push("/login");
+            }}
           >
-            Sign in
+            {pathname === "/login" ? "Sign up" : "Sign in"}
           </button>
         </div>
       </div>
