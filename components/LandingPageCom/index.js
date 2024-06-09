@@ -5,9 +5,11 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdCheckCircle } from "react-icons/md";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const LandingPageComponent = () => {
   const [renderedCards, setRenderedCards] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,7 +21,7 @@ const LandingPageComponent = () => {
 
   return (
     <div className="mx-auto px-4 md:px-8 md:w-maxContainer">
-      <div className="bg-gray-300 rounded-bl-3xl rounded-br-3xl h-60 md:h-96 flex items-center animate-top-to-bottom">
+      <div className="bg-gray-300 rounded-bl-3xl rounded-br-3xl h-80 md:h-96 flex items-center animate-top-to-bottom">
         <div className="md:grid grid-cols-[1fr,0.8fr] my-auto">
           <div className="p-6 md:p-12">
             <h1 className="text-black text-3xl md:text-[42px] md:leading-[42px] font-semibold">
@@ -33,6 +35,17 @@ const LandingPageComponent = () => {
               Securely store tasks, ensuring easy access and tracking for each
               one.
             </p>
+            <div className="flex items-center gap-3 mt-8 md:-mb-4">
+              <button
+                className="px-4 py-2 rounded-sm text-white bg-black"
+                onClick={() => router.push("/login")}
+              >
+                Start now
+              </button>
+              <button className="px-4 py-2 rounded-sm text-black bg-white">
+                Try demo
+              </button>
+            </div>
           </div>
           <div className="hidden md:flex justify-center items-center text-[200px]">
             <FaTasks />
