@@ -7,7 +7,7 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-// import personImg1 from "../../assets/public";
+// import personImg1 from "../../assets/public"; add command
 
 const LandingPageComponent = () => {
   const [renderedCards, setRenderedCards] = useState(0);
