@@ -7,7 +7,9 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-// import personImg1 from "../../assets/public"; add command
+import personImg1 from "../../assets/public/personImg1.jpg";
+import personImg2 from "../../assets/public/personImg2.jpg";
+import personImg3 from "../../assets/public/personImg3.jpg";
 
 const LandingPageComponent = () => {
   const [renderedCards, setRenderedCards] = useState(0);
@@ -54,7 +56,7 @@ const LandingPageComponent = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-rows-4 md:grid-cols-4 items-center gap-4 mt-7">
+      <div className="grid grid-rows-4 md:grid-rows-1 md:grid-cols-4 items-center gap-4 mt-7">
         {renderedCards >= 1 && (
           <div className="task-card">
             <div className="bg-gray-300 rounded-md p-4 h-32 flex flex-col justify-end">
@@ -64,9 +66,7 @@ const LandingPageComponent = () => {
                 <div className="flex items-center">
                   <div className="rounded-full inline-block relative z-30 overflow-hidden h-9 w-9">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
-                      }
+                      src={personImg1}
                       height={36}
                       width={36}
                       alt="Member Image"
@@ -74,9 +74,7 @@ const LandingPageComponent = () => {
                   </div>
                   <div className="rounded-full -ml-2 inline-block relative z-20 overflow-hidden h-9 w-9">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D"
-                      }
+                      src={personImg2}
                       height={36}
                       width={36}
                       alt="Member Image"
@@ -84,9 +82,7 @@ const LandingPageComponent = () => {
                   </div>
                   <div className="rounded-full -ml-2 inline-block relative z-10 overflow-hidden h-9 w-9">
                     <Image
-                      src={
-                        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
-                      }
+                      src={personImg3}
                       height={36}
                       width={36}
                       alt="Member Image"

@@ -74,7 +74,7 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
                 User Name
               </label>
               <input
-                className={`w-full h-10 px-3 placeholder:text-black outline-none bg-transparent border-b-[1px] ${
+                className={`w-full h-10 px-3 placeholder:text-gray-700 placeholder:text-sm outline-none bg-transparent border-b-[1px] ${
                   errors.username ? "border-red-500" : "border-b-black"
                 }`}
                 type="text"
@@ -102,7 +102,7 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
                 Password
               </label>
               <input
-                className={`w-full h-10 px-3 placeholder:text-black outline-none bg-transparent border-b-[1px] ${
+                className={`w-full h-10 px-3 placeholder:text-gray-700 placeholder:text-sm outline-none bg-transparent border-b-[1px] ${
                   errors.password ? "border-red-500" : "border-b-black"
                 }`}
                 type="password"
@@ -162,9 +162,107 @@ const LoginComponent = ({ formForLogin, setFormLogin }) => {
         </div>
       ) : (
         <div>
-          <p>Coming soon</p>
-          <p className="text-sm text-gray-700 font-medium">
-            Already have account,{" "}
+          <div className="max-w-sm mx-auto rounded-lg">
+            <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+              Sign up
+            </h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div>
+                <label
+                  htmlFor="create-user-name"
+                  className="block text-sm font-medium text-black m-2"
+                >
+                  Create User Name
+                </label>
+                <input
+                  className={`w-full h-10 px-3 placeholder:text-gray-700 placeholder:text-sm outline-none bg-transparent border-b-[1px] ${
+                    errors.username ? "border-red-500" : "border-b-black"
+                  }`}
+                  type="text"
+                  id="create-user-name"
+                  placeholder="Enter user name"
+                  {...register("username", {
+                    required: " * Username is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9_.-]*$/,
+                      message: " * Invalid username",
+                    },
+                  })}
+                />
+                {errors.username && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.username.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label
+                  htmlFor="create-user-password"
+                  className="block text-sm font-medium text-black m-2"
+                >
+                  Create New Password
+                </label>
+                <input
+                  className={`w-full h-10 px-3 placeholder:text-gray-700 placeholder:text-sm outline-none bg-transparent border-b-[1px] ${
+                    errors.password ? "border-red-500" : "border-b-black"
+                  }`}
+                  type="password"
+                  id="create-user-password"
+                  placeholder="Enter password"
+                  {...register("password", {
+                    required: " * Password is required",
+                    minLength: {
+                      value: 6,
+                      message: " * Password must be at least 6 characters long",
+                    },
+                  })}
+                />
+                {errors.password && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label
+                  htmlFor="confirm-user-password"
+                  className="block text-sm font-medium text-black m-2"
+                >
+                  Confirm New Password
+                </label>
+                <input
+                  className={`w-full h-10 px-3 placeholder:text-gray-700 placeholder:text-sm outline-none bg-transparent border-b-[1px] ${
+                    errors.password ? "border-red-500" : "border-b-black"
+                  }`}
+                  type="password"
+                  id="confirm-user-password"
+                  placeholder="Enter password"
+                  {...register("password", {
+                    required: " * Password is required",
+                    minLength: {
+                      value: 6,
+                      message: " * Password must be at least 6 characters long",
+                    },
+                  })}
+                />
+                {errors.password && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
+              <button
+                type="submit"
+                disabled={submitLoading}
+                className="w-full h-10 bg-black text-white font-semibold rounded-md transition duration-300 flex items-center justify-center"
+              >
+                {submitLoading && <FaSpinner className="animate-spin mr-2" />}
+                Sign up
+              </button>
+            </form>
+          </div>
+          <p className="text-sm text-gray-700 font-medium mt-4 text-center">
+            Already have account?,{" "}
             <span
               className="text-black font-medium underline"
               onClick={() => setFormLogin(true)}
