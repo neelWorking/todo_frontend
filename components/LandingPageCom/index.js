@@ -11,6 +11,7 @@ import personImg1 from "../../public/assets/personImg1.jpg";
 import personImg2 from "../../public/assets/personImg2.jpg";
 import personImg3 from "../../public/assets/personImg3.jpg";
 import KeyFeatureSection from "./keyFeatures";
+import Testimonials from "./Testimonials";
 
 const LandingPageComponent = () => {
   const [renderedCards, setRenderedCards] = useState(0);
@@ -135,6 +136,7 @@ const LandingPageComponent = () => {
         )}
       </div>
       <KeyFeatureSection />
+      <Testimonials />
     </div>
   );
 };
