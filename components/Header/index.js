@@ -8,7 +8,7 @@ const Header = ({ setFormLogin }) => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-white w-full p-4 py-2 z-50">
+    <header className="bg-white w-full p-4 py-2 z-50 sticky top-0">
       <div className="md:w-maxContainer grid mx-auto grid-cols-2 md:grid-cols-3 items-center justify-center">
         <a className="font-semibold flex items-center gap-2" href="/">
           <FaTasks style={{ fontSize: "24px", cursor: "pointer" }} />
@@ -39,7 +39,7 @@ const Header = ({ setFormLogin }) => {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

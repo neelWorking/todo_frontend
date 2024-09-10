@@ -7,9 +7,11 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import personImg1 from "../../assets/public/personImg1.jpg";
-import personImg2 from "../../assets/public/personImg2.jpg";
-import personImg3 from "../../assets/public/personImg3.jpg";
+import personImg1 from "../../public/assets/personImg1.jpg";
+import personImg2 from "../../public/assets/personImg2.jpg";
+import personImg3 from "../../public/assets/personImg3.jpg";
+import KeyFeatureSection from "./keyFeatures";
+import Testimonials from "./Testimonials";
 
 const LandingPageComponent = () => {
   const [renderedCards, setRenderedCards] = useState(0);
@@ -56,7 +58,7 @@ const LandingPageComponent = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-rows-4 md:grid-rows-1 md:grid-cols-4 items-center gap-4 mt-7">
+      <div className="h-[560px] md:h-[128px] grid grid-rows-4 md:grid-rows-1 md:grid-cols-4 items-center gap-4 mt-7">
         {renderedCards >= 1 && (
           <div className="task-card">
             <div className="bg-gray-300 rounded-md p-4 h-32 flex flex-col justify-end">
@@ -133,6 +135,8 @@ const LandingPageComponent = () => {
           </div>
         )}
       </div>
+      <KeyFeatureSection />
+      <Testimonials />
     </div>
   );
 };
